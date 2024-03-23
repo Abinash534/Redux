@@ -1,4 +1,7 @@
-import { legacy_createStore } from "redux";
+import { legacy_createStore, combineReducers } from "redux";
 import { countReducer } from "../reducer/countReducer";
+import { colorReducer } from "../reducer/colorReducer";
 
-export const store = legacy_createStore(countReducer);
+const rootRedducer = combineReducers({ countReducer, colorReducer });
+
+export const store = legacy_createStore(rootRedducer);
